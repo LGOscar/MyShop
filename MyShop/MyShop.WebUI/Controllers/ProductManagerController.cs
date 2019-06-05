@@ -45,9 +45,9 @@ namespace MyShop.WebUI.Controllers
             }                      
         }
 
-        public ActionResult Edit(string Id)
+        public ActionResult Edit(string id)
         {
-            Product product = context.Find(Id);
+            Product product = context.Find(id);
 
             if (product == null)
             {
@@ -60,11 +60,11 @@ namespace MyShop.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Product product, string Id)
+        public ActionResult Edit(Product product, string id)
         {
-            Product productToEdit = context.Find(Id);
+            Product productToEdit = context.Find(id);
 
-            if (product == null)
+            if (productToEdit == null)
             {
                 return HttpNotFound();
             }
@@ -87,9 +87,9 @@ namespace MyShop.WebUI.Controllers
             }            
         }
 
-        public ActionResult Delete(string Id)
+        public ActionResult Delete(string id)
         {
-            Product productToDelete = context.Find(Id);
+            Product productToDelete = context.Find(id);
 
             if (productToDelete == null)
             {
@@ -103,9 +103,9 @@ namespace MyShop.WebUI.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
-        public ActionResult ConfirmDelete(string Id)
+        public ActionResult ConfirmDelete(string id)
         {
-            Product productToDelete = context.Find(Id);
+            Product productToDelete = context.Find(id);
 
             if (productToDelete == null)
             {
@@ -113,7 +113,7 @@ namespace MyShop.WebUI.Controllers
             }
             else
             {
-                context.Delete(Id);
+                context.Delete(id);
                 context.Commit();
                 return RedirectToAction("Index");
             }
