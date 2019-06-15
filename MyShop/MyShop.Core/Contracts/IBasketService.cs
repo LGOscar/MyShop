@@ -1,5 +1,4 @@
-﻿using MyShop.Core.Models;
-using MyShop.Core.ViewModels;
+﻿using MyShop.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +14,5 @@ namespace MyShop.Core.Contracts
         void RemoveFromBasket(HttpContextBase httpContext, string itemId);
         List<BasketItemViewModel> GetBasketItems(HttpContextBase httpContext);
         BasketSummaryViewModel GetBasketSummary(HttpContextBase httpContext);
-
     }
 }
